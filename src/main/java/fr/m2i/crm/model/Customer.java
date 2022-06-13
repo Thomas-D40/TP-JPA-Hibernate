@@ -10,19 +10,21 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-
+	
+	
+	@Column(name = "address")
 	private String address;
 	
-	@Column(length = 100)
+	@Column(name = "city", length = 100)
 	private String city;
 	
 	@Column(name = "company_name", length = 100)
 	private String companyName;
 	
-	@Column(length = 100)
+	@Column(name = "country", length = 100)
 	private String country;
 	
-	@Column(length = 100)
+	@Column(name = "email", length = 100)
 	private String email;
 	
 	@Column(name="first_name", length = 100)
@@ -31,7 +33,7 @@ public class Customer {
 	@Column(name="last_name", length = 100)
 	private String lastName;
 	
-	@Column(length = 20)
+	@Column(name = "phone", length = 20)
 	private String phone;
 	
 	@Column(name = "zip_code" ,length = 12)
