@@ -8,7 +8,7 @@ public class SessionHelper {
 	private static EntityManager entityManager;
 	
 	
-	// A éviter car bouffe de la mémoire pour stocker cette info qui ne sert qu'à une reprise
+	// A éviter car occupe de l'emplacement mémoire pour stocker cette info qui ne sert qu'à une occasion
 	// private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("crm");
 	
 	private SessionHelper() {};
