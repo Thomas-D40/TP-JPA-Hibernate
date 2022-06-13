@@ -8,33 +8,33 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
-	@Column(nullable = false)
+
 	private String address;
 	
-	@Column(length = 100, nullable = false)
+	@Column(length = 100)
 	private String city;
 	
-	@Column(name = "company_name", length = 100, nullable = false)
+	@Column(name = "company_name", length = 100)
 	private String companyName;
 	
-	@Column(length = 100, nullable = false)
+	@Column(length = 100)
 	private String country;
 	
-	@Column(length = 100, nullable = false)
+	@Column(length = 100)
 	private String email;
 	
-	@Column(name="first_name", length = 100, nullable = false)
+	@Column(name="first_name", length = 100)
 	private String firstName;
 	
-	@Column(name="last_name", length = 100, nullable = false)
+	@Column(name="last_name", length = 100)
 	private String lastName;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 20)
 	private String phone;
 	
-	@Column(name = "zip_code" ,length = 12, nullable = false)
+	@Column(name = "zip_code" ,length = 12)
 	private String zipCode;
 	
 	
@@ -42,11 +42,11 @@ public class Customer {
 	public Customer() {
 	}
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
