@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class Main {
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("crm");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("crm"); // Point d'entrée pour créer des requêtes
 		EntityManager entityManager = emf.createEntityManager();
 	
 	}
