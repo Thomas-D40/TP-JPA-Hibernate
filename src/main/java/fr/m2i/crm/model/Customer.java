@@ -172,4 +172,22 @@ public class Customer {
 			this.setState(newCostumer.getState());
 		}
 	}
+	
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("Customer{");
+		sb.append("id=").append(id);
+		sb.append(", address='").append(address).append('\'');
+		sb.append(", city='").append(city).append('\'');
+		sb.append(", companyName='").append(companyName).append('\'');
+		sb.append(", country='").append(country).append('\'');
+		sb.append(", email='").append(email).append('\'');
+		sb.append(", firstName='").append(firstName).append('\'');
+		sb.append(", lastName='").append(lastName).append('\'');
+		sb.append(", phone='").append(phone).append('\'');
+		sb.append(", zipCode='").append(zipCode).append('\'');
+		sb.append(", state=").append(state);
+		sb.append('}');
+		return sb.toString();
+	}
 }

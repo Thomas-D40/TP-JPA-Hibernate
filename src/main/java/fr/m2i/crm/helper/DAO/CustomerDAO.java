@@ -1,28 +1,27 @@
-package fr.m2i.crm.DAO;
+package fr.m2i.crm.helper.DAO;
 
 import fr.m2i.crm.helper.SessionHelper;
 import fr.m2i.crm.model.Customer;
-import fr.m2i.crm.state.CustomerState;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import java.util.ArrayList;
+import java.util.List;
 
 
 public class CustomerDAO {
 	
-	public ArrayList<Customer> findAllCustomers() {
-		EntityManager entityManager = SessionHelper.getEntityManager();
+	private final EntityManager entityManager = SessionHelper.getEntityManager();
+	
+	public List findAll() {
 		
-		Query query = entityManager.createQuery("SELECT * FROM customers");
+		Query query = entityManager.createQuery("SELECT c FROM Customer c");
 		
-		return (ArrayList<Customer>) query.getResultList();
+		return query.getResultList();
 		
 	}
 	
 	public Customer findById(Long id) {
-		EntityManager entityManager = SessionHelper.getEntityManager();
 		
 		Customer customer = entityManager.find(Customer.class, id);
 		
@@ -39,10 +38,6 @@ public class CustomerDAO {
 			System.out.println("Une erreur est survenue lors de la création");
 			return;
 		}
-		
-		EntityManager entityManager = SessionHelper.getEntityManager();
-		
-		
 		
 		
 		
@@ -68,10 +63,6 @@ public class CustomerDAO {
 			System.out.println("Une erreur est survenue lors de la mise à jour");
 			return;
 		}
-		
-		EntityManager entityManager = SessionHelper.getEntityManager();
-		
-		
 		
 		Customer customerToUpdate = findById(customer.getId());
 		
@@ -105,9 +96,6 @@ public class CustomerDAO {
 			System.out.println("Une erreur est survenue lors de la suppression");
 			return;
 		}
-		
-		EntityManager entityManager = SessionHelper.getEntityManager();
-		
 		
 		EntityTransaction tx = null;
 		
