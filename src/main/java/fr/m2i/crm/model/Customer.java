@@ -1,5 +1,8 @@
 package fr.m2i.crm.model;
 
+import fr.m2i.crm.state.CustomerState;
+import org.hibernate.annotations.ColumnDefault;
+
 import javax.persistence.*;
 
 @Entity
@@ -38,6 +41,11 @@ public class Customer {
 	
 	@Column(name = "zip_code" ,length = 12)
 	private String zipCode;
+	
+	@Column(name="state")
+	@ColumnDefault("0")
+	@Enumerated(EnumType.ORDINAL)
+	private CustomerState state;
 	
 	
 	
@@ -122,5 +130,46 @@ public class Customer {
 	
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
+	}
+	
+	public CustomerState getState() {
+		return state;
+	}
+	
+	public void setState(CustomerState state) {
+		this.state = state;
+	}
+	
+	public void setNotNullData (Customer newCostumer) {
+		if (newCostumer.address != null) {
+			this.setAddress(newCostumer.getAddress());
+		}
+		if (newCostumer.city != null) {
+			this.setCity(newCostumer.getCity());
+		}
+		if (newCostumer.companyName != null) {
+			this.setCompanyName(newCostumer.getCompanyName());
+		}
+		if (newCostumer.country != null) {
+			this.setCountry(newCostumer.getCountry());
+		}
+		if (newCostumer.email != null) {
+			this.setEmail(newCostumer.getEmail());
+		}
+		if (newCostumer.firstName != null) {
+			this.setFirstName(newCostumer.getFirstName());
+		}
+		if (newCostumer.lastName != null) {
+			this.setLastName(newCostumer.getLastName());
+		}
+		if (newCostumer.phone != null) {
+			this.setPhone(newCostumer.getPhone());
+		}
+		if (newCostumer.zipCode != null) {
+			this.setZipCode(newCostumer.getZipCode());
+		}
+		if (newCostumer.state != null) {
+			this.setState(newCostumer.getState());
+		}
 	}
 }
