@@ -1,4 +1,4 @@
-package fr.m2i.crm.helper.DAO;
+package fr.m2i.crm.DAO;
 
 import fr.m2i.crm.helper.SessionHelper;
 import fr.m2i.crm.model.Customer;

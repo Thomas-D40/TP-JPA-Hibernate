@@ -1,11 +1,10 @@
 package fr.m2i.crm;
 
-import fr.m2i.crm.helper.DAO.CustomerDAO;
+import fr.m2i.crm.DAO.CustomerDAO;
 import fr.m2i.crm.helper.SessionHelper;
 import fr.m2i.crm.model.Customer;
 
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.List;
 
 
